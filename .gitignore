@@ -1,0 +1,13 @@
+.env
+node_modules/
+.next/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backend/uploads/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+tsconfig.tsbuildinfo
