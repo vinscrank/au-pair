@@ -9,7 +9,7 @@ from fastapi import Response
 
 from app.config import settings
 
-COOKIE = "mobijob_session"
+COOKIE = "au_pair_session"
 ALGORITHM = "HS256"
 
 

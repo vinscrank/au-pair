@@ -2,18 +2,18 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: mobijob
-      POSTGRES_PASSWORD: mobijob
-      POSTGRES_DB: mobijob
+      POSTGRES_USER: aupair
+      POSTGRES_PASSWORD: aupair
+      POSTGRES_DB: aupair
     ports:
       - "5432:5432"
     volumes:
-      - mobijob_pg:/var/lib/postgresql/data
+      - aupair_pg:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mobijob -d mobijob"]
+      test: ["CMD-SHELL", "pg_isready -U aupair -d aupair"]
       interval: 5s
       timeout: 5s
       retries: 10
 
 volumes:
-  mobijob_pg:
+  aupair_pg:

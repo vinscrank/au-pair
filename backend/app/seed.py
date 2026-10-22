@@ -22,7 +22,7 @@ def person(email: str, role: str, profile: dict, hours_ago: int) -> dict:
 
 PEOPLE = [
     person(
-        "sofia.rossi@demo.mobijob.ie",
+        "sofia.rossi@demo.aupair.ie",
         "candidate",
         {
             "display_name": "Sofia Rossi",
@@ -69,7 +69,7 @@ PEOPLE = [
         1,
     ),
     person(
-        "aoife.nolan@demo.mobijob.ie",
+        "aoife.nolan@demo.aupair.ie",
         "candidate",
         {
             "display_name": "Aoife Nolan",
@@ -115,7 +115,7 @@ PEOPLE = [
         2,
     ),
     person(
-        "mateusz.kowal@demo.mobijob.ie",
+        "mateusz.kowal@demo.aupair.ie",
         "candidate",
         {
             "display_name": "Mateusz Kowal",
@@ -161,7 +161,7 @@ PEOPLE = [
         3,
     ),
     person(
-        "ines.moreau@demo.mobijob.ie",
+        "ines.moreau@demo.aupair.ie",
         "candidate",
         {
             "display_name": "Inès Moreau",
@@ -208,7 +208,7 @@ PEOPLE = [
         4,
     ),
     person(
-        "niamh.brennan@demo.mobijob.ie",
+        "niamh.brennan@demo.aupair.ie",
         "family",
         {
             "display_name": "Brennan family",
@@ -241,7 +241,7 @@ PEOPLE = [
         5,
     ),
     person(
-        "ada.okonkwo@demo.mobijob.ie",
+        "ada.okonkwo@demo.aupair.ie",
         "family",
         {
             "display_name": "Okonkwo family",
@@ -275,7 +275,7 @@ PEOPLE = [
         6,
     ),
     person(
-        "orla.byrne@demo.mobijob.ie",
+        "orla.byrne@demo.aupair.ie",
         "family",
         {
             "display_name": "Byrne family",
@@ -305,7 +305,7 @@ PEOPLE = [
         7,
     ),
     person(
-        "ciara.murphy@demo.mobijob.ie",
+        "ciara.murphy@demo.aupair.ie",
         "family",
         {
             "display_name": "Murphy family",

@@ -7,7 +7,7 @@ export default function WelcomePage() {
       <section className="split-story">
         <Wordmark />
         <h1 className="display">Find care. Find a family.</h1>
-        <p className="lede">Mobijob matches au pairs and babysitters with host families in Dublin.</p>
+        <p className="lede">Au pair matches au pairs and babysitters with host families in Dublin.</p>
         <ul className="points">
           <li>
             <strong>Practical profiles.</strong> Areas, hours, children and pay are on the card.

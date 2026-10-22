@@ -72,6 +72,17 @@ class ChildIn(BaseModel):
     age_months: int | None = None
 
 
+PAY_LIMIT = 9999
+
+
+def euro(amount: int | None) -> int | None:
+    if amount is None:
+        return None
+    if amount < 0 or amount > PAY_LIMIT:
+        raise ValueError(f"Pay should be a whole number of euro up to {PAY_LIMIT}.")
+    return amount
+
+
 def bounded(value: str, limit: int, label: str) -> str:
     value = (value or "").strip()
     if len(value) > limit:
@@ -127,7 +138,7 @@ def photo_ok(value: str) -> str:
     if not value:
         return ""
     if ".." in value or not (value.startswith("/uploads/") or value.startswith("/seed/")):
-        raise ValueError("Use a photo uploaded on Mobijob.")
+        raise ValueError("Use a photo uploaded on Au pair.")
     return value
 
 
@@ -166,8 +177,8 @@ class CandidateIn(BaseModel):
     start_timing: str = ""
     duration_months: int | None = Field(default=None, ge=1, le=36)
     pay_basis: str = ""
-    pay_min: int | None = Field(default=None, ge=0, le=5000)
-    pay_max: int | None = Field(default=None, ge=0, le=5000)
+    pay_min: int | None = None
+    pay_max: int | None = None
     pay_negotiable: bool = False
     bio: str = ""
 
@@ -186,6 +197,8 @@ class CandidateIn(BaseModel):
         self.arrangement = choice(self.arrangement, ARRANGEMENT_VALUES, "arrangement")
         self.start_timing = choice(self.start_timing, START_VALUES, "start")
         self.pay_basis = choice(self.pay_basis, PAY_VALUES, "pay")
+        self.pay_min = euro(self.pay_min)
+        self.pay_max = euro(self.pay_max)
         self.experience_age_bands = choice_list(self.experience_age_bands, AGE_BAND_VALUES, "age group")
         self.duties = choice_list(self.duties, DUTY_VALUES, "duty")
         self.areas = choice_list(self.areas, AREA_VALUES, "area", limit=8)
@@ -220,7 +233,7 @@ class FamilyIn(BaseModel):
     own_room: bool = False
     accommodation_notes: str = ""
     pay_basis: str = ""
-    pay_amount: int | None = Field(default=None, ge=0, le=5000)
+    pay_amount: int | None = None
     pay_negotiable: bool = False
     bio: str = ""
 
@@ -237,6 +250,7 @@ class FamilyIn(BaseModel):
         self.arrangement = choice(self.arrangement, ARRANGEMENT_VALUES, "arrangement")
         self.start_timing = choice(self.start_timing, START_VALUES, "start")
         self.pay_basis = choice(self.pay_basis, PAY_VALUES, "pay")
+        self.pay_amount = euro(self.pay_amount)
         self.household = choice(self.household, HOUSEHOLD_VALUES, "household")
         self.duties = choice_list(self.duties, DUTY_VALUES, "duty")
         self.days_needed = choice_list(self.days_needed, DAY_VALUES, "day")

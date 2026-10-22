@@ -29,7 +29,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
       credentials: 'include',
     });
   } catch {
-    throw new ApiError(0, 'Mobijob is not responding. Check that the API is running.');
+    throw new ApiError(0, 'Au pair is not responding. Check that the API is running.');
   }
   if (response.status === 204) return undefined as T;
   const data = await response.json().catch(() => ({}));

@@ -265,6 +265,17 @@ function languageIssue(rows: LanguageRow[], emptyMessage: string): string | null
   return null;
 }
 
+const PAY_LIMIT = 9999;
+
+function payAmount(value: string): string | null {
+  if (!value.trim()) return null;
+  const amount = whole(value);
+  if (amount === null || amount < 0 || amount > PAY_LIMIT) {
+    return `Pay should be a whole number of euro up to ${PAY_LIMIT}.`;
+  }
+  return null;
+}
+
 function optionalWhole(value: string, label: string, max: number): string | null {
   if (!value.trim()) return null;
   const parsed = whole(value);
@@ -279,7 +290,7 @@ export function candidateIssue(form: CandidateForm, step: number | 'all'): strin
       if (form.display_name.trim().length < 2) return 'Add your name.';
       if (!phoneOk(form.whatsapp)) return 'Add a WhatsApp number, with the country code if you are outside Ireland.';
       const age = whole(form.age);
-      if (age === null || age < 18 || age > 75) return 'Add your age. Mobijob is for people 18 and over.';
+      if (age === null || age < 18 || age > 75) return 'Add your age. Au pair is for people 18 and over.';
       if (form.nationality.trim().length < 2) return 'Add your nationality.';
       if (form.based_in.trim().length < 2) return 'Say where you are based now.';
       return null;
@@ -306,6 +317,8 @@ export function candidateIssue(form: CandidateForm, step: number | 'all'): strin
     },
     () => {
       if (!form.pay_basis) return 'Choose how you want to be paid.';
+      const pay = payAmount(form.pay_min) || payAmount(form.pay_max);
+      if (pay) return pay;
       if (!form.pay_negotiable) {
         const amount = whole(form.pay_min);
         if (amount === null || amount <= 0) return 'Add the pay you are hoping for, or mark it as negotiable.';
@@ -372,6 +385,8 @@ export function familyIssue(form: FamilyForm, step: number | 'all'): string | nu
     },
     () => {
       if (!form.pay_basis) return 'Choose how you will pay.';
+      const pay = payAmount(form.pay_amount);
+      if (pay) return pay;
       if (!form.pay_negotiable) {
         const amount = whole(form.pay_amount);
         if (amount === null || amount <= 0) return 'Add the pay you are offering, or mark it as negotiable.';

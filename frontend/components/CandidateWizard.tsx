@@ -165,7 +165,7 @@ export function CandidateWizard({
           <Check label="First aid" checked={form.first_aid} onChange={(first_aid) => patch({ first_aid })} />
           <Check
             label="Garda vetting"
-            hint="Say yes only if you hold it. Mobijob does not check the disclosure."
+            hint="Say yes only if you hold it. Au pair does not check the disclosure."
             checked={form.garda_vetting}
             onChange={(garda_vetting) => patch({ garda_vetting })}
           />

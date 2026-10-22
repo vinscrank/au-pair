@@ -46,7 +46,7 @@ export function AppShell({ children, variant = 'app' }: { children: React.ReactN
   return (
     <div className={variant === 'app' ? 'shell app' : 'shell'}>
       <header className="topbar">
-        <Link href={home} aria-label="Mobijob home">
+        <Link href={home} aria-label="Au pair home">
           <Wordmark compact />
         </Link>
         {variant === 'plain' ? (

@@ -7,8 +7,8 @@ const display = Fraunces({ subsets: ['latin'], variable: '--font-display' });
 const sans = Outfit({ subsets: ['latin'], variable: '--font-body' });
 
 export const metadata: Metadata = {
-  title: 'Mobijob',
-  description: 'Mobijob matches au pairs and babysitters with host families in Dublin.',
+  title: 'Au pair',
+  description: 'Au pair matches au pairs and babysitters with host families in Dublin.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

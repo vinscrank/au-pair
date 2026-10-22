@@ -1,6 +1,6 @@
-# Mobijob
+# Au pair
 
-Mobijob matches au pairs and babysitters with host families in Dublin. Both sides complete a profile, then browse cards. A like from both people is a match, and only then is WhatsApp shown.
+Au pair matches au pairs and babysitters with host families in Dublin. Both sides complete a profile, then browse cards. A like from both people is a match, and only then is WhatsApp shown.
 
 The brand is a warm paper-and-ink listing, not a dating app: Fraunces and Outfit, cream `#F3EEE6`, ink `#1C2B26`, clay `#C6533A`, honey `#E4B15A`. The mark is a doorway with a hearth dot.
 
@@ -38,20 +38,20 @@ npm run dev
 
 Open http://localhost:3000. The Next app proxies `/api` and `/uploads` to the API, and the session cookie is httpOnly.
 
-`python -m app.seed` loads eight fictional Dublin profiles and can be run again. It only replaces the `@demo.mobijob.ie` accounts.
+`python -m app.seed` loads eight fictional Dublin profiles and can be run again. It only replaces the `@demo.aupair.ie` accounts.
 
 Demo password for every seed account: `dublin-demo`
 
 | Email | Role |
 | --- | --- |
-| sofia.rossi@demo.mobijob.ie | Candidate, live-in au pair |
-| aoife.nolan@demo.mobijob.ie | Candidate, northside babysitter |
-| mateusz.kowal@demo.mobijob.ie | Candidate, Dublin 15, drives |
-| ines.moreau@demo.mobijob.ie | Candidate, south coast, live-in |
-| niamh.brennan@demo.mobijob.ie | Family, Rathgar |
-| ada.okonkwo@demo.mobijob.ie | Family, Blanchardstown |
-| orla.byrne@demo.mobijob.ie | Family, Clontarf evenings |
-| ciara.murphy@demo.mobijob.ie | Family, Blackrock after school |
+| sofia.rossi@demo.aupair.ie | Candidate, live-in au pair |
+| aoife.nolan@demo.aupair.ie | Candidate, northside babysitter |
+| mateusz.kowal@demo.aupair.ie | Candidate, Dublin 15, drives |
+| ines.moreau@demo.aupair.ie | Candidate, south coast, live-in |
+| niamh.brennan@demo.aupair.ie | Family, Rathgar |
+| ada.okonkwo@demo.aupair.ie | Family, Blanchardstown |
+| orla.byrne@demo.aupair.ie | Family, Clontarf evenings |
+| ciara.murphy@demo.aupair.ie | Family, Blackrock after school |
 
 Seed photos are Unsplash placeholders. The names and bios are fictional.
 

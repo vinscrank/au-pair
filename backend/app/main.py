@@ -9,7 +9,7 @@ from app.routers import auth, discovery, profiles
 from app.routers.profiles import UPLOAD_DIR
 from app.vocab import meta
 
-app = FastAPI(title="Mobijob")
+app = FastAPI(title="Au pair")
 
 app.add_middleware(
     CORSMiddleware,

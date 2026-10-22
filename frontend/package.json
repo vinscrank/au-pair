@@ -1,5 +1,5 @@
 {
-  "name": "mobijob-frontend",
+  "name": "au-pair-frontend",
   "private": true,
   "scripts": {
     "dev": "next dev",

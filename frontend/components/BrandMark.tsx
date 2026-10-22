@@ -19,7 +19,7 @@ export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
     <span className={compact ? 'wordmark compact' : 'wordmark'}>
       <BrandMark />
-      <span>Mobijob</span>
+      <span>Au pair</span>
     </span>
   );
 }

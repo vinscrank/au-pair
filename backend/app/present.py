@@ -176,7 +176,7 @@ def candidate_card(user: User, profile: CandidateProfile) -> dict:
         ("EU passport", "Yes" if profile.eu_passport else ""),
         ("Available at short notice", "Yes" if profile.available_short_notice else ""),
         ("First aid", "Yes" if profile.first_aid else ""),
-        ("Garda vetting", "Self-reported, not checked by Mobijob" if profile.garda_vetting else ""),
+        ("Garda vetting", "Self-reported, not checked by Au pair" if profile.garda_vetting else ""),
         ("References", "Available" if profile.has_references else ""),
         ("Special needs experience", "Yes" if profile.special_needs_experience else ""),
         ("Qualification", profile.qualification or ""),
